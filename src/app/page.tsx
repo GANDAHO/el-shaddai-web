@@ -10,12 +10,13 @@ import {
 // Animation variants pour la fluidité
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" }
-  })
+    transition: { duration: 0.6 }
+  }
 };
+
 
 export default function LandingPage() {
   const [formData, setFormData] = useState({ parentName: '', phone: '', childClass: '' });
@@ -59,7 +60,7 @@ export default function LandingPage() {
       {/* HERO SECTION : L'ACCROCHE STRATÉGIQUE */}
       <section className="relative pt-40 pb-20 px-6 z-10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div custom={0} initial="hidden" animate="visible" variants={fadeIn}>
+          <motion.div initial="hidden" animate="visible" variants={fadeIn}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-shaddai-pink/10 border border-shaddai-pink/20 text-shaddai-pink text-xs font-bold mb-6">
               <Zap size={14} /> LE FUTUR DE L'ÉDUCATION À COTONOU
             </div>
